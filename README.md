@@ -3,6 +3,8 @@ A simple web application built with SvelteKit that allows you to easily upload i
 
 > Github Copilot built this page btw, i have little to no time for writing a readme for a simple project that I published just to use cloudflare pages.
 
+>  I should also mention that this project is only meant to be used privately, your tokens are not really that secure so please do not trust this app.
+
 ## Features
 
 - Drag and drop interface for uploading multiple images
@@ -38,7 +40,15 @@ npm run dev
 npm run dev -- --open (to automatically open in browser)
 ```
 
-4. Open your browser and navigate to the local server (usually http://localhost:5173)
+4. Open your browser and navigate to the port mentioned in your terminal.
+
+### Running on Docker
+```bash
+docker build -t label-studio-uploader .
+# and
+docker run -p 3000:3000 --name label-uploader label-studio-uploader
+# You can now access it on http://localhost:3000
+```
 
 ## Configuration
 
