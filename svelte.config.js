@@ -9,9 +9,9 @@ function pickAdapter() {
 		case 'node':
 			return adapterNode();
 		case 'static':
-			return adapterNode();
-		default:
 			return adapterStatic();
+		default:
+			return adapterAuto();
 	}
 }
 

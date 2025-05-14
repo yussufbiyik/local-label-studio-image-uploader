@@ -259,6 +259,9 @@
         on:dragover|preventDefault={() => (dragActive = true)}
         on:dragleave={() => (dragActive = false)}
         on:drop={handleDrop}
+        role="button"
+        tabindex="0"
+        aria-label="Dosya yükleme alanı"
     >
         Buraya sürükle bırak
     </div>
