@@ -1,6 +1,6 @@
 <script>
-    import { onMount } from 'svelte';
-    
+    import { onMount } from 'svelte'; 
+
     let files = [];
     let dragActive = false;
     let uploadStatus = [];
@@ -22,6 +22,17 @@
                     url: storedConfig.labelStudioUrl,
                     projectId: storedConfig.projectId,
                     apiKey: storedConfig.personalAccessToken
+                };
+                configMissing = false;
+            } else if (
+                import.meta.env.VITE_LABEL_STUDIO_ADDRESS && 
+                import.meta.env.VITE_LABEL_STUDIO_PERSONAL_ACCESS_TOKEN && 
+                import.meta.env.VITE_LABEL_STUDIO_PROJECT_ID
+            ) {
+                labelStudioConfig = {
+                    url: import.meta.env.VITE_LABEL_STUDIO_ADDRESS,
+                    apiKey: import.meta.env.VITE_LABEL_STUDIO_PERSONAL_ACCESS_TOKEN,
+                    projectId: import.meta.env.VITE_LABEL_STUDIO_PROJECT_ID,
                 };
                 configMissing = false;
             } else {
