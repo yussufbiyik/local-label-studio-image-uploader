@@ -56,8 +56,13 @@
 </script>
 
 <main class="container">
-    <h1>Label Studio Yapılandırması</h1>
-    
+    <div class="header">
+        <h1>Label Studio Yapılandırması</h1>
+        <a class="page-link" href="/">
+            <i class="fa-solid fa-house"></i>
+            Ana Sayfa
+        </a>
+    </div>
     <form on:submit|preventDefault={saveConfiguration}>
         <div class="form-group">
             <label for="labelStudioUrl">Label Studio URL</label>
@@ -96,8 +101,14 @@
         </div>
 
         <div class="button-group">
-            <button type="submit" class="primary">Kaydet</button>
-            <button type="button" on:click={clearConfiguration} class="secondary">Temizle</button>
+            <button type="submit" class="primary">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Kaydet
+            </button>
+            <button type="button" on:click={clearConfiguration} class="secondary">
+                <i class="fa-solid fa-broom"></i>
+                Temizle
+            </button>
         </div>
 
         {#if saveStatus}

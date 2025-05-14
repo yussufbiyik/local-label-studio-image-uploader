@@ -170,13 +170,17 @@
         color: white;
         cursor: pointer;
         font-weight: 500;
-        display: grid;
-        align-items: center;
-        justify-content: center;
         border-radius: 0.5rem;
         padding: 0.75rem 1.5rem;
         background-color: #5b9dff;
         transition: background-color 0.3s ease;
+
+        gap: 5px;
+        display: grid;
+        grid-auto-flow: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
     }
     
     .custom-file-input:hover {
@@ -234,33 +238,21 @@
         text-align: center;
         margin-bottom: 1rem;
     }
-    .config-link {
-        color: #0066cc;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    .config-link:hover {
-        text-decoration: underline;
-    }
-    .header {
-        gap:5px;
-        display: grid;
-        grid-auto-flow: row;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
 </style>
 
 <div class="upload-container">
     <div class="header">
-        <h1>Fotoğrafları Label Studio'ya Gönder</h1>
-        <a href="/configurator" class="config-link">Ayarlar</a>
+        <h1>Label Studio Image Uploader</h1>
+        <a href="/configurator" class="page-link">
+            <i class="fa-solid fa-gear"></i> 
+            Ayarlar
+        </a>
     </div>
     
     {#if configMissing}
         <div class="config-banner">
             Label Studio ayarları yapılmamış. Lütfen 
-            <a href="/configurator" class="config-link">ayarlar sayfasından</a> 
+            <a href="/configurator" class="page-link">ayarlar sayfasından</a> 
             gerekli bilgileri giriniz.
         </div>
     {/if}
@@ -277,9 +269,15 @@
         Buraya sürükle bırak
     </div>
     <p>veya dosyaları seç</p>
-    <label for="file-upload" class="custom-file-input">Dosya Seç</label>
+    <label for="file-upload" class="custom-file-input">
+        <i class="fa-solid fa-folder"></i> 
+        Dosya Seç
+    </label>
     <input id="file-upload" type="file" accept="image/*" multiple on:change={handleFileChange} />
-    <label for="camera-upload" class="custom-file-input">Kameradan Yükle</label>
+    <label for="camera-upload" class="custom-file-input">
+        <i class="fa-solid fa-camera"></i>
+        Kameradan Yükle
+    </label>
     <input id="camera-upload" type="file" accept="image/*" capture multiple on:change={handleFileChange} />
 
     {#if uploadStatus.length > 0}
