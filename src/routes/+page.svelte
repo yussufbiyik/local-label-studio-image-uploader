@@ -265,6 +265,8 @@
     <p>veya dosyaları seç</p>
     <label for="file-upload" class="custom-file-input">Dosya Seç</label>
     <input id="file-upload" type="file" accept="image/*" multiple on:change={handleFileChange} />
+    <label for="camera-upload" class="custom-file-input">Kameradan Yükle</label>
+    <input id="camera-upload" type="file" accept="image/*" capture multiple on:change={handleFileChange} />
 
     {#if uploadStatus.length > 0}
         <div class="status-list">
