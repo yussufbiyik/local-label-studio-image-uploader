@@ -141,37 +141,36 @@
 </script>
 
 <style>
+    .container {
+        height: 100%;
+        padding-bottom: 90px;
+        grid-template-rows: auto 1fr;
+    }
     .dropzone {
+        align-self: stretch;
         border: 2px dashed #aaa;
         border-radius: 1rem;
         padding: 2rem;
+        cursor: grab;
         text-align: center;
         transition: border-color 0.3s ease;
+        display: grid;
+        align-items: center;
+        align-content: center;
     }
     .dropzone.dragover {
         border-color: #5b9dff;
     }
-    .upload-container {
-        max-width: 500px;
-        margin: 1rem;
-        display: grid;
-        
-        gap: 5px;
-        grid-auto-flow: row;
-        justify-items: stretch;
-        align-content: center;
-        align-items: center;
-        justify-self: center;
-    }
     .custom-file-input {
-        width: 100%;
-        height: 35px;
-        border: none;
-        color: white;
-        cursor: pointer;
-        font-weight: 500;
-        border-radius: 0.5rem;
         padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        height: 50px;
+
+        color: white;
+        font-weight: 500;
         background-color: #5b9dff;
         transition: background-color 0.3s ease;
 
@@ -240,7 +239,7 @@
     }
 </style>
 
-<div class="upload-container">
+<div class="container">
     <div class="header">
         <h1>Label Studio Image Uploader</h1>
         <a href="/configurator" class="page-link">
@@ -266,19 +265,26 @@
         tabindex="0"
         aria-label="Dosya yükleme alanı"
     >
+        <i class="fa-solid fa-hand"></i>
+        <br>
         Buraya sürükle bırak
     </div>
-    <p>veya dosyaları seç</p>
-    <label for="file-upload" class="custom-file-input">
-        <i class="fa-solid fa-folder"></i> 
-        Dosya Seç
-    </label>
-    <input id="file-upload" type="file" accept="image/*" multiple on:change={handleFileChange} />
-    <label for="camera-upload" class="custom-file-input">
-        <i class="fa-solid fa-camera"></i>
-        Kameradan Yükle
-    </label>
-    <input id="camera-upload" type="file" accept="image/*" capture multiple on:change={handleFileChange} />
+    <div class="bottom-buttons">
+        <div class="bottom-button">
+            <label for="file-upload" class="custom-file-input">
+                <i class="fa-solid fa-folder"></i> 
+                Dosya Seç
+            </label>
+            <input id="file-upload" type="file" accept="image/*" multiple on:change={handleFileChange} />
+        </div>
+        <div class="bottom-button">
+            <label for="camera-upload" class="custom-file-input">
+                <i class="fa-solid fa-camera"></i>
+                Kameradan Yükle
+            </label>
+            <input id="camera-upload" type="file" accept="image/*" capture multiple on:change={handleFileChange} />
+        </div>
+    </div>
 
     {#if uploadStatus.length > 0}
         <div class="status-list">

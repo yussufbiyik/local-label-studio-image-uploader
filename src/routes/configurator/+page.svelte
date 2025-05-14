@@ -100,7 +100,7 @@
             <small>Label Studio kişisel erişim tokenınız, ana sayfada profile girince en alttan alınabilir.</small>
         </div>
 
-        <div class="button-group">
+        <div class="bottom-buttons">
             <button type="submit" class="primary">
                 <i class="fa-solid fa-floppy-disk"></i>
                 Kaydet
@@ -127,12 +127,6 @@
 </main>
 
 <style>
-    .container {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 1rem;
-    }
-
     h1 {
         margin-bottom: 2rem;
         color: #333;
@@ -172,22 +166,6 @@
         margin-top: 0.25rem;
         color: #666;
         font-size: 0.85rem;
-    }
-
-    .button-group {
-        gap: 1rem;
-        display: grid;
-        grid-auto-flow: column;
-        
-        justify-items: stretch;
-    }
-
-    button {
-        padding: 0.75rem 1.5rem;
-        border: none;
-        border-radius: 4px;
-        font-size: 1rem;
-        cursor: pointer;
     }
 
     button.primary {
