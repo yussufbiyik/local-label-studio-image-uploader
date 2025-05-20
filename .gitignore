@@ -9,6 +9,10 @@ node_modules
 /build
 /android
 
+# Assets
+/Assets
+/icons
+
 # OS
 .DS_Store
 Thumbs.db

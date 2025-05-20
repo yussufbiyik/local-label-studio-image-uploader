@@ -8,6 +8,13 @@ const config: CapacitorConfig = {
     CapacitorHttp: {
       enabled: true,
     },
+    "SplashScreen": {
+      "launchShowDuration": 1000,
+      "launchAutoHide": true,
+      "backgroundColor": "#650808",
+      "androidSplashResourceName": "splash",
+      "iosSplashResourceName": "Default"
+    }
   }
 };
 

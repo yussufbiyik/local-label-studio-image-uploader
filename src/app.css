@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+:root {
+    --color-0: #650808;
+    --color-1: #d73535;
+    --color-1-light: #fd3e3e;
+    --color-2: #e49839;
+    --color-3: #b6a434;
+    --color-4: #4c5a23;
+}
+
 * {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
@@ -7,6 +16,36 @@
     font-variation-settings:
         "wdth" 100;
     box-sizing: border-box;
+}
+
+slot {
+    height: 100%;
+
+    padding: 10px;
+    padding-bottom: 85px;
+}
+
+.scale-animation{
+    transform-style: ease;
+    transition-duration: .3s;
+}
+
+.scale-animation:hover {
+    transform: scale(1.02);
+}
+.scale-animation:active {
+    transform: scale(0.98);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 h1,h2,h3,h4,h5,h6,span,p,label {
@@ -20,6 +59,9 @@ html, body {
     height: 100%;
     width: 100%;
     overflow: hidden;
+
+    color: white;
+    background-color: var(--color-0);
 }
 
 .container {
@@ -36,7 +78,7 @@ html, body {
     justify-self: center;
     
     overflow: auto;
-    padding: 1rem;
+    padding: 10px;
 }
 
 .header {
@@ -44,12 +86,14 @@ html, body {
     display: grid;
     grid-auto-flow: row;
     align-items: center;
+    text-align: center;
 }
 
 .page-link {
     color: #0066cc;
     text-decoration: none;
     font-weight: bold;
+    text-align: end;
 }
 .page-link:hover {
     text-decoration: underline;
@@ -77,4 +121,14 @@ button{
     font-size: 1rem;
     cursor: pointer;
     height: 50px;
+}
+
+.primary {
+    background-color: #4a6cf7;
+    color: white;
+}
+
+.secondary {
+    background-color: #f1f1f1;
+    color: #333;
 }
